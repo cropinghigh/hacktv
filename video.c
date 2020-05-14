@@ -153,52 +153,52 @@ const vid_config_t vid_config_pal_bg = {
 };
 
 const vid_config_t vid_config_pal_fm = {
-	
-	/* PAL FM (satellite) */
-	.output_type    = HACKTV_INT16_COMPLEX,
-	
-	.modulation     = VID_FM,
-	.fm_level       = 1.0,
-	.fm_deviation   = 10000000, /* Hz */
-	
-	.level          = 1.0, /* Overall signal level */
-	
-	.video_level    = 1.00, /* Power level of video */
-	.fm_audio_level = 0.05, /* FM audio carrier power level */
-	
-	.type           = VID_RASTER_625,
-	.frame_rate_num = 25,
-	.frame_rate_den = 1,
-	.lines          = 625,
-	.active_lines   = 576,
-	.active_width   = 0.00005195, /* 51.95µs */
-	.active_left    = 0.00001040, /* |-->| 10.40µs */
-	
-	.hsync_width       = 0.00000470, /* 4.70 ±0.20µs */
-	.vsync_short_width = 0.00000235, /* 2.35 ±0.10µs */
-	.vsync_long_width  = 0.00002730, /* 2.73 ±0.20µs */
-	
-	.white_level    =  0.50,
-	.black_level    = -0.20,
-	.blanking_level = -0.20,
-	.sync_level     = -0.50,
-	
-	.colour_mode    = VID_PAL,
-	.burst_width    = 0.00000225, /* 2.25 ±0.23µs */
-	.burst_rise     = 0.00000030, /* 0.30 ±0.10µs */
-	.burst_left     = 0.00000560, /* |-->| 5.6 ±0.1µs */
-	.burst_level    = 3.0 / 7.0, /* 3 / 7 of white - blanking level */
-	.colour_carrier = 4433618.75,
-	.colour_lookup_lines = 625 * 4, /* The carrier repeats after 4 frames */
-	
-	.rw_co          = 0.299, /* R weight */
-	.gw_co          = 0.587, /* G weight */
-	.bw_co          = 0.114, /* B weight */
-	.iu_co          = 0.000,
-	.iv_co          = 0.877,
-	.qu_co          = 0.493,
-	.qv_co          = 0.000,
-	
+	/* System B/G (PAL) (RUSSIAN CABLE TV FORMAT) */
+    .output_type    = HACKTV_INT16_COMPLEX,
+    
+    .modulation     = VID_VSB,
+    .vsb_upper_bw   = 5000000, /* Hz */
+    .vsb_lower_bw   =  750000, /* Hz */
+    
+    .level          = 1.0, /* Overall signal level */
+    
+    .video_level    = 0.71, /* Power level of video */
+    .fm_audio_level = 0.22, /* FM audio carrier power level */
+    .nicam_level    = 0.07 / 2, /* NICAM audio carrier power level */
+    
+    .type           = VID_RASTER_625,
+    .frame_rate_num = 25,
+    .frame_rate_den = 1,
+    .lines          = 625,
+    .active_lines   = 576,
+    .active_width   = 0.00005195, /* 51.95µs */
+    .active_left    = 0.00001040, /* |-->| 10.40µs */
+    
+    .hsync_width       = 0.00000470, /* 4.70 ±0.20µs */
+    .vsync_short_width = 0.00000235, /* 2.35 ±0.10µs */
+    .vsync_long_width  = 0.00002730, /* 2.73 ±0.20µs */
+    
+    .white_level    = 0.20,
+    .black_level    = 0.76,
+    .blanking_level = 0.76,
+    .sync_level     = 1.00,
+    
+    .colour_mode    = VID_PAL,
+    .burst_width    = 0.00000225, /* 2.25 ±0.23µs */
+    .burst_rise     = 0.00000030, /* 0.30 ±0.10µs */
+    .burst_left     = 0.00000560, /* |-->| 5.6 ±0.1µs */
+    .burst_level    = 3.0 / 7.0, /* 3 / 7 of white - blanking level */
+    .colour_carrier = 4433618.75,
+    .colour_lookup_lines = 625 * 4, /* The carrier repeats after 4 frames */
+    
+    .rw_co          = 0.299, /* R weight */
+    .gw_co          = 0.587, /* G weight */
+    .bw_co          = 0.114, /* B weight */
+    .iu_co          = 0.000,
+    .iv_co          = 0.877,
+    .qu_co          = 0.493,
+    .qv_co          = 0.000,
+    
 	.fm_mono_carrier    = 6500000, /* Hz */
 	//.fm_left_carrier    = 7200000, /* Hz */
 	//.fm_right_carrier   = 7020000, /* Hz */
