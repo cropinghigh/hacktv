@@ -33,7 +33,8 @@ hacktv: $(OBJS)
 	@$(CC) $(CFLAGS) -MM $< -o $(@:.o=.d)
 
 install:
-	cp -f hacktv $(PREFIX)/usr/local/bin/
+	mkdir -p $(DESTDIR)/usr/bin/
+	cp -f hacktv $(DESTDIR)/usr/bin/
 
 clean:
 	rm -f *.o *.d hacktv hacktv.exe
